@@ -11,30 +11,10 @@ import {
     LinkIcon
 } from "../components/Links";
 
-type DataLink = {
-    title: string
-    image: string
-    href: string
-  }
-  
-  type DataSocial = {
-    title: string
-    href: string
-  }
-
-  interface HomePageProps {
-    data: {
-        name: string
-        avatar: string
-        links: DataLink[]
-        socials: DataSocial[]
-    }
-  }
-
 // This is a Client Component. It receives data as props and
 // has access to state and effects just like Page components
 // in the `pages` directory.
-export default function HomePage({ data }: HomePageProps) {
+export default function HomePage({ data }) {
   return (
     <div className="flex flex-col items-center mx-auto w-full mt-16 px-8">
       <Image
@@ -45,12 +25,12 @@ export default function HomePage({ data }: HomePageProps) {
         alt={data.name}
       />
       <h1 className="font-bold mt-4 text-xl mb-8">{data.name}</h1>
-      {data.links.map((link: DataLink) => (
+      {data.links.map((link) => (
         <ExternalLinkCard key={link.href} {...link} />
       ))}
       <div className="flex gap-4 items-center mt-8">
       {
-      data.socials.map((link: DataSocial) => {
+      data.socials.map((link) => {
 
         if (link.href.includes('twitter')) {
           return <TwitterIcon key={link.href}/>;
