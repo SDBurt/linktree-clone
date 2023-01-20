@@ -1,18 +1,17 @@
-import './globals.css'
+import '../styles/globals.css'
+import cn from 'classnames'
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-      <body>{children}</body>
-    </html>
-  )
+
+    const backgroundGradient = "bg-gradient-to-r from-teal-200 to-lime-200"
+    
+    return (
+        <html lang="en">
+            <body className={cn(backgroundGradient)}>{children}</body>
+        </html>
+    );
 }
