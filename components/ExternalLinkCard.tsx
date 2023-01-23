@@ -20,9 +20,10 @@ export default function ExternalLinkCard({href, title, image}: {href: string, ti
           <h2 className="font-semibold text-center">
             {title}
           </h2>
-          <div className="flex items-center justify-center w-10 h-10">
+          <div className="flex items-center justify-center w-10 h-10"></div>
+          {/* <div className="flex items-center justify-center w-10 h-10 text-gray-50 hover:text-gray-200">
             <LinkIcon />
-          </div>
+          </div> */}
         </div>
       </a>
     )
